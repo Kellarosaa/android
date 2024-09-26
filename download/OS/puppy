@@ -1,1 +1,31 @@
-https://www.dropbox.com/scl/fi/iyaebyq46jt59gvqa6xn8/fossapup64-9.5.iso?rlkey=9tyifhmiheh6f01wfjsw2pacy&st=jn2kjbrc&dl=1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Button</title>
+    <style>
+        .centered-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-button">
+        <button class="button" onclick="median.share.downloadFile({url: 'https://www.dropbox.com/scl/fi/iyaebyq46jt59gvqa6xn8/fossapup64-9.5.iso?rlkey=9tyifhmiheh6f01wfjsw2pacy&st=mjolqiwe&dl=1', open: true})">Download Puppy Linux</button>
+    </div>
+</body>
+</html>
