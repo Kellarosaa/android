@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Handling with Confirmation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hidden { display: none; }
+        .button { margin: 5px; padding: 10px; background-color: #dc3545; color: white; border: none; cursor: pointer; }
+        .button:hover { background-color: #c82333; }
+    </style>
+</head>
+<body>
+    <h1>Incoming Call</h1>
+    <button class="button" id="acceptCall">Accept Call</button>
+    <div id="options" class="hidden">
+        <h2>Customer Problem: Technical Support</h2>
+        <p>Select the best option to assist the customer:</p>
+        <button class="button" onclick="confirmOption('restart')">Restart Device</button>
+        <button class="button" onclick="confirmOption('update')">Update Software</button>
+        <button class="button" onclick="confirmOption('diagnose')">Run Diagnostics</button>
+    </div>
+    <div id="result" class="hidden"></div>
+
+    <script>
+        document.getElementById('acceptCall').onclick = function() {
+            document.getElementById('options').classList.remove('hidden');
+            this.classList.add('hidden');
+        };
+
+        function confirmOption(option) {
+            const confirmation = confirm("Are you sure you want to proceed with this option?");
+            if (confirmation) {
+                handleOption(option);
+            }
+        }
+
+        function handleOption(option) {
+            let message;
+            switch(option) {
+                case 'restart':
+                    message = "You chose to restart the device. This can often resolve issues.";
+                    break;
+                case 'update':
+                    message = "You chose to update the software. Please ensure the device is connected to the internet.";
+                    break;
+                case 'diagnose':
+                    message = "You chose to run diagnostics. This will help identify the problem.";
+                    break;
+            }
+            document.getElementById('result').innerText = message;
+            document.getElementById('result').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
